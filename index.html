@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DASH METRY CLONE - Accueil</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            
+            /* Dégradé bleu/violet sombre élégant */
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f3460 100%);
+            color: #fff;
+        }
+
+        /* ===== CONTENEUR PRINCIPAL ===== */
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+            padding: 2rem;
+        }
+
+        /* ===== TITRE ===== */
+        .title {
+            font-size: 4rem;
+            font-weight: 900;
+            letter-spacing: 0.3rem;
+            text-transform: uppercase;
+            text-align: center;
+            
+            /* Dégradé subtil sur le texte */
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            
+            /* Ombre portée légère */
+            filter: drop-shadow(0 4px 8px rgba(0, 0, 0, 0.3));
+            
+            /* Animation d'apparition */
+            animation: fadeInDown 0.8s ease-out;
+        }
+
+        /* ===== BOUTON PLAY ===== */
+        .play-btn {
+            padding: 1.5rem 4rem;
+            font-size: 2rem;
+            font-weight: 700;
+            letter-spacing: 0.2rem;
+            text-transform: uppercase;
+            color: #fff;
+            background: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            box-shadow: 0 8px 20px rgba(56, 239, 125, 0.3);
+            transition: all 0.3s ease;
+            
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        .play-btn:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 12px 30px rgba(56, 239, 125, 0.5);
+        }
+
+        .play-btn:active {
+            transform: translateY(-1px) scale(1.02);
+        }
+
+        /* ===== BOUTONS SECONDAIRES ===== */
+        .secondary-buttons {
+            display: flex;
+            gap: 2rem;
+            margin-top: 2rem;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .secondary-btn {
+            padding: 0.8rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            letter-spacing: 0.1rem;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.1);
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            border-radius: 30px;
+            cursor: pointer;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+            border-color: rgba(255, 255, 255, 0.4);
+            transform: translateY(-2px);
+        }
+
+        .secondary-btn:active {
+            transform: translateY(0);
+        }
+
+        /* ===== ANIMATIONS ===== */
+        @keyframes fadeInDown {
+            from {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* ===== RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .title {
+                font-size: 2.5rem;
+                letter-spacing: 0.2rem;
+            }
+
+            .play-btn {
+                padding: 1.2rem 3rem;
+                font-size: 1.5rem;
+            }
+
+            .secondary-buttons {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .secondary-btn {
+                width: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Conteneur principal -->
+    <div class="container">
+        <!-- Titre du jeu -->
+        <h1 class="title">DASH METRY CLONE</h1>
+
+        <!-- Bouton principal PLAY -->
+        <button class="play-btn" id="playBtn">PLAY</button>
+
+        <!-- Boutons secondaires -->
+        <div class="secondary-buttons">
+            <button class="secondary-btn" id="editorBtn">Éditeur</button>
+            <button class="secondary-btn" id="garageBtn">Garage</button>
+            <button class="secondary-btn" id="optionsBtn">Options</button>
+        </div>
+    </div>
+
+    <script>
+        // ===== GESTION DES ÉVÉNEMENTS =====
+        
+        // Bouton PLAY
+        document.getElementById('playBtn').addEventListener('click', () => {
+            console.log('Lancement du jeu...');
+            // TODO: Naviguer vers la page de jeu
+            alert('Lancement du jeu !');
+        });
+
+        // Bouton Éditeur
+        document.getElementById('editorBtn').addEventListener('click', () => {
+            console.log('Ouverture de l\'éditeur...');
+            // TODO: Naviguer vers l'éditeur de niveaux
+            alert('Éditeur de niveaux');
+        });
+
+        // Bouton Garage
+        document.getElementById('garageBtn').addEventListener('click', () => {
+            console.log('Ouverture du garage...');
+            // TODO: Naviguer vers le garage (personnalisation)
+            alert('Garage - Personnalisation');
+        });
+
+        // Bouton Options
+        document.getElementById('optionsBtn').addEventListener('click', () => {
+            console.log('Ouverture des options...');
+            // TODO: Naviguer vers les options
+            alert('Options du jeu');
+        });
+
+        // Support clavier (Entrée pour jouer)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') {
+                document.getElementById('playBtn').click();
+            }
+        });
+    </script>
+</body>
+</html>
